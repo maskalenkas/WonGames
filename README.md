@@ -1,17 +1,28 @@
-# Tecnologias nesse boilerplate:
+# WonGames
+> Um e-commerce de games completo
 
-- Husky
-- Lint-Staged 
-- TS
-- Eslint
-- Prettier
-- NextJS ( yarn start )
-- Jest ( yarn test, yarn test:watch )
-- Styled Components
-- Global styles
-- Plop para gerar arquivos automaticamnete ( yarn generate )
-- DependaBot ja configurado para não quebrar
-- PWD
-- StoryBook ( yarn storybook )
+TDD, GraphQL e NextJS definem esse projeto. Tudo feito seguindo as melhores praticas.
 
-# Aproveite!
+## Instalação
+
+```sh
+yarn create next-app -e https://github.com/maskalenkas/Boilerplate-NextJSD
+```
+
+## Comandos
+
+> Acesso direto ao storybook
+```sh
+yarn storybook
+```
+
+------------
+
+> Acesso a pagina inicial
+```sh
+yarn dev
+```
+
+------------
+
+
