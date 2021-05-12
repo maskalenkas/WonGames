@@ -2324,12 +2324,28 @@
     resolve-from "^5.0.0"
     store2 "^2.12.0"
 
+"@styled-icons/material-outlined@^10.28.0":
+  version "10.28.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/material-outlined/-/material-outlined-10.28.0.tgz#57d34c7a417bb79cf930bf1302aa8b463de1bcad"
+  integrity sha512-TXCYrBeR5YXDziNMDAO6ZpKVjWvWaWmhBvF/vTvL6sME5zazk9sToyRJ6i/+DZGNH8wD7+635e8hkZAYPp++/A==
+  dependencies:
+    "@babel/runtime" "^7.12.13"
+    "@styled-icons/styled-icon" "^10.6.0"
+
 "@styled-icons/material@^10.28.0":
   version "10.28.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/material/-/material-10.28.0.tgz#9437b6a0acffcefb578247f349c2972403334244"
   integrity sha512-+401y79/qclNEMVbkAy98sJbBazeX/0k0DuPsULikAa+GDmmfzwk+xi9HloQa1Gsyc9/Zbnc5Hf7rFiJcukfbA==
   dependencies:
     "@babel/runtime" "^7.12.13"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/remix-fill@^10.18.0":
+  version "10.18.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/remix-fill/-/remix-fill-10.18.0.tgz#7a7b007b6d3e97ff3b63fc07f7af1d365245b25a"
+  integrity sha512-FbnQMvxt2R7CYb8j/dVAXd31CDg4k3vX1zG/9GH9qpL536yxndnyopa7hwF/Yisy2pzR7uNlNXmTQAmYK2HSrg==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
     "@styled-icons/styled-icon" "^10.6.0"
 
 "@styled-icons/styled-icon@^10.6.0":

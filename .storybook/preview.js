@@ -10,3 +10,11 @@ export const decorators = [
     </ThemeProvider>
   )
 ]
+
+export const parameters = {
+  backgrounds: {
+    values: [
+      { name: 'black', value: '#000000' },
+    ],
+  },
+};
