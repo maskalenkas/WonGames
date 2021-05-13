@@ -8,6 +8,7 @@ import Logo from 'components/Logo';
 import * as S from './styles';
 import { useState } from 'react';
 import Button from 'components/Button';
+import MediaWatch from 'components/MediaWatch';
 
 export type MenuProps = {
   username?: string;
@@ -18,12 +19,22 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.Wrapper>
-      <S.IconWrapper onClick={() => setIsOpen(true)}>
-        <MenuIcon aria-label="Open menu" />
-      </S.IconWrapper>
+      <MediaWatch lessThan="medium">
+        <S.IconWrapper onClick={() => setIsOpen(true)}>
+          <MenuIcon aria-label="Open menu" />
+        </S.IconWrapper>
+      </MediaWatch>
+
       <S.LogoWrapper>
         <Logo hideOnMobile />
       </S.LogoWrapper>
+
+      <MediaWatch greaterThan="medium">
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explore</S.MenuLink>
+        </S.MenuNav>
+      </MediaWatch>
 
       <S.MenuGroup>
         <S.IconWrapper>
@@ -32,6 +43,9 @@ const Menu = ({ username }: MenuProps) => {
         <S.IconWrapper>
           <ShoppingCartIcon aria-label="open shopping cart" />
         </S.IconWrapper>
+        <MediaWatch greaterThan="medium">
+          {!username && <Button>Sign in</Button>}
+        </MediaWatch>
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
