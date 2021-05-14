@@ -1,14 +1,13 @@
+import { useState } from 'react';
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2';
 import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart';
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search';
-import { Close as CloseICon } from '@styled-icons/material-outlined/Close';
+import { Close as CloseIcon } from '@styled-icons/material-outlined/Close';
 
-import Logo from 'components/Logo';
-
-import * as S from './styles';
-import { useState } from 'react';
 import Button from 'components/Button';
-import MediaWatch from 'components/MediaWatch';
+import Logo from 'components/Logo';
+import MediaMatch from 'components/MediaWatch';
+import * as S from './styles';
 
 export type MenuProps = {
   username?: string;
@@ -19,37 +18,39 @@ const Menu = ({ username }: MenuProps) => {
 
   return (
     <S.Wrapper>
-      <MediaWatch lessThan="medium">
+      <MediaMatch lessThan="medium">
         <S.IconWrapper onClick={() => setIsOpen(true)}>
-          <MenuIcon aria-label="Open menu" />
+          <MenuIcon aria-label="Open Menu" />
         </S.IconWrapper>
-      </MediaWatch>
+      </MediaMatch>
 
       <S.LogoWrapper>
         <Logo hideOnMobile />
       </S.LogoWrapper>
 
-      <MediaWatch greaterThan="medium">
+      <MediaMatch greaterThan="medium">
         <S.MenuNav>
           <S.MenuLink href="#">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
         </S.MenuNav>
-      </MediaWatch>
+      </MediaMatch>
 
       <S.MenuGroup>
         <S.IconWrapper>
-          <SearchIcon aria-label="search" />
+          <SearchIcon aria-label="Search" />
         </S.IconWrapper>
         <S.IconWrapper>
-          <ShoppingCartIcon aria-label="open shopping cart" />
+          <ShoppingCartIcon aria-label="Open Shopping Cart" />
         </S.IconWrapper>
-        <MediaWatch greaterThan="medium">
-          {!username && <Button>Sign in</Button>}
-        </MediaWatch>
+        {!username && (
+          <MediaMatch greaterThan="medium">
+            <Button>Sign in</Button>
+          </MediaMatch>
+        )}
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
-        <CloseICon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+        <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           <S.MenuLink href="#">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
@@ -68,7 +69,7 @@ const Menu = ({ username }: MenuProps) => {
               Log in now
             </Button>
             <span>or</span>
-            <S.CreateAccount href="#" title="Sign In">
+            <S.CreateAccount href="#" title="Sign Up">
               Sign Up
             </S.CreateAccount>
           </S.RegisterBox>
