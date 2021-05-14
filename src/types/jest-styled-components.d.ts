@@ -9,7 +9,7 @@ declare global {
   namespace jest {
     interface AsymmetricMatcher {
       $$typeof: symbol;
-      sample?: string | RegExp | object | Array<any> | Function;
+      sample?: string | RegExp | object | Array | Function;
     }
 
     type Value = string | number | RegExp | AsymmetricMatcher | undefined;
@@ -20,7 +20,6 @@ declare global {
       supports?: string;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface Matchers<R, T> {
       toHaveStyleRule(property: string, value?: Value, options?: Options): R;
     }
