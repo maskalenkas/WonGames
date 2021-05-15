@@ -1,15 +1,27 @@
-import React from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
 
+//https://www.saltycrane.com/cheat-sheets/typescript/react/latest/
+
+// interface AnchorHTMLAttributes<T> extends HTMLAttributes<T> {
+//   download?: any;
+//   href?: string;
+//   hrefLang?: string;
+//   media?: string;
+//    ............
+
+// Componente pode receber href, onclick...
+type ButtonTypes =
+  | AnchorHTMLAttributes<HTMLAnchorElement>
+  | ButtonHTMLAttributes<HTMLButtonElement>;
+
 export type ButtonProps = {
-  children?: React.ReactNode;
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
   icon?: JSX.Element;
-  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void;
-};
+  as?: React.ElementType;
+} & ButtonTypes;
 
-// Se eu não passar um icone, o hasIcon vai chegar como false
 const Button = ({
   children,
   icon,
