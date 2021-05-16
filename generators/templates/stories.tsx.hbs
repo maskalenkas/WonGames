@@ -4,6 +4,10 @@ import {{pascalCase name}} from '.';
 export default {
   title: '{{pascalCase name}}',
   component: {{pascalCase name}},
+  args: {},
+  parameters: {
+    layout: 'fullscreen',
+  },
 } as Meta;
 
-export const Default: Story = () => <{{pascalCase name}} />;
+export const Default: Story = (args) => <{{pascalCase name}} {...args} />;
