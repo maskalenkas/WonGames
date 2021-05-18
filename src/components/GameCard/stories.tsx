@@ -4,6 +4,9 @@ import GameCard, { GameCardProps } from '.';
 export default {
   title: 'GameCard',
   component: GameCard,
+  argTypes: {
+    onFav: { action: 'click' },
+  },
   args: {
     title: 'Population Zero',
     developer: 'Rockstar Games',
