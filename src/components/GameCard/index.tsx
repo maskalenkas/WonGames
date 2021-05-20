@@ -6,10 +6,8 @@ import {
 
 import Button from 'components/Button';
 import Ribbon from 'components/Ribbon';
+import { RibbonColors, RibbonSizes } from '../Ribbon';
 import * as S from './styles';
-
-export type RibbonColors = 'primary' | 'secondary';
-export type RibbonSizes = 'normal' | 'small';
 
 export type GameCardProps = {
   title: string;
