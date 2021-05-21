@@ -1,8 +1,8 @@
 import 'match-media-mock';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithTheme } from 'utils/tests/helpers';
 
 import BannerSlider from '.';
-import { renderWithTheme } from 'utils/tests/helpers';
 
 const items = [
   {
@@ -32,10 +32,7 @@ describe('<BannerSlider />', () => {
   it('should render with 1 active item', () => {
     const { container } = renderWithTheme(<BannerSlider items={items} />);
 
-    // Verificando se esta renderizando 2 elementos
     expect(container.querySelectorAll('.slick-slide')).toHaveLength(2);
-
-    // Verificando se tem apenas um item ativo. Esta recebendo 2 por padrão, e um com aria-hidden. Por isso o li
     expect(container.querySelectorAll('li.slick-active')).toHaveLength(1);
 
     expect(
