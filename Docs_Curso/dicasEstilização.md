@@ -17,7 +17,7 @@ const Button = ({
 
 ## O primeiro jeito é para quando tem mais de uma diferença entre as 2 decisões, o segundo é para quando é totalmente igual, só muda uma coisa
 
-## 1
+## 1 - Dependendo da prop, vai ter mais de uma diferença, que é a color.
 **Passando as props**
   <S.Wrapper size='medium' />
 
@@ -39,13 +39,13 @@ const wrapperModifiers = {
   `,
   **medium: (theme: DefaultTheme) => css`**
     font-size: ${theme.font.sizes.xlarge};
-    color: red;
+    color: red; *A diferença*
 `};
 
 
 
 
-## 2
+## 2 - independente da prop, vai ter só uma diferença, que é o font-size.
 **Passando as props**
   <S.Wrapper color='primary' />
 
