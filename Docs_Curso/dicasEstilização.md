@@ -18,14 +18,20 @@ const Button = ({
 ## O primeiro jeito é para quando tem mais de uma diferença entre as 2 decisões, o segundo é para quando é totalmente igual, só muda uma coisa
 
 ## 1
+**Passando as props**
+  <S.Wrapper size='medium' />
+
 **Props size**
 *src/index*
   size?: 'small' | 'medium';
 
-**Passando as props**
-  <S.Wrapper size='medium' />
+**Depois eu vou chamar direto a função**
+*src/styles*
+ ${({size }) => css`
+  **${!!size && wrapperModifiers[size](theme)}**
+`}
 
-**Controller**
+**e vai chamar a função dependendo do que vier no [size]**
 *src/styles*
 const wrapperModifiers = {
   **small: (theme: DefaultTheme) => css`**
@@ -33,41 +39,34 @@ const wrapperModifiers = {
   `,
   **medium: (theme: DefaultTheme) => css`**
     font-size: ${theme.font.sizes.xlarge};
+    color: red;
 `};
-
-**Size pode ter 2 valores, sendo assim, eu faço esse percurso.**
-*src/styles*
- ${({size }) => css`
-
-  **${!!size && wrapperModifiers[size](theme)}**
-  `}
 
 
 
 
 ## 2
-*PRimeiro eu faço o type dentro do index para o modificador receber*
-**Index**
-export type RibbonColors = 'primary' | 'secondary';
+**Passando as props**
+  <S.Wrapper color='primary' />
 
+**props color**
+*src/index*
 export type RibbonProps = {
-  children: React.ReactNode;
-  color?: RibbonColors;
+  color?: 'primary' | 'secondary';
 };
 
-**Depois eu vou utulizar no styles**
+**Depois eu vou passar para o controlador via parametro**
 *src/Styles*
-import { RibbonColors, RibbonProps } from '.';
-
-const wrapperModifiers = {
-  **color: (theme: DefaultTheme, color: RibbonColors) => css`**
-    background-color: ${theme.colors[color]}; *Unsado a cor recebida, no controlador*
-  `,
-};
-
-**Passando a color recebida para o controlador**
 export const Wrapper = styled.div<RibbonProps>`
   ${({ theme, color }) => css`
     **${!!color && wrapperModifiers.color(theme, color)}**
   `}
 `;
+
+**E ele vai decidir o que fazer com esse parametro**
+*src/Styles*
+const wrapperModifiers = {
+  **color: (theme: DefaultTheme, color: RibbonColors) => css`**
+    background-color: ${theme.colors[color]}; *Unsado a cor recebida, no controlador*
+  `,
+};
