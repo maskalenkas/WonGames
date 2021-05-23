@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+// https://react-slick.neostack.com/docs/get-started
 
+// Estilos pegos do: <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
 export const Wrapper = styled.section`
   .slick-slider {
     position: relative;

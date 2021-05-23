@@ -5,6 +5,11 @@ import { GameCardSliderProps } from '.';
 
 type WrapperProps = Pick<GameCardSliderProps, 'color'>;
 
+// https://react-slick.neostack.com/docs/get-started
+
+// Estilos pego do:
+// <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
 export const Wrapper = styled.section<WrapperProps>`
   ${({ theme, color }) => css`
     ${media.lessThan('huge')`

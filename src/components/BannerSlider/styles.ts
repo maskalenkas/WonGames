@@ -2,6 +2,11 @@ import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
 import * as BannerStyles from 'components/Banner/styles';
 
+// https://react-slick.neostack.com/docs/get-started
+
+// Estilos pego do:
+// <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     .slick-dots {
