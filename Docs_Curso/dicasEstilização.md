@@ -35,6 +35,7 @@ const Button = ({
 *src/styles*
 const wrapperModifiers = {
   **small: (theme: DefaultTheme) => css`**
+    color: black; *A diferença*
     font-size: ${theme.font.sizes.medium};
   `,
   **medium: (theme: DefaultTheme) => css`**
