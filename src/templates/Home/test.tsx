@@ -51,7 +51,7 @@ describe('<Home />', () => {
     expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1);
     // card game ( 5 sections com 4 cards cada = 5x4 = 20)
     // slidesToShow: 4,
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(10);
+    expect(screen.getAllByText(/population zero/i)).toHaveLength(20);
     // highlight
     expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3);
   });
