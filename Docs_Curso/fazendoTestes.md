@@ -33,6 +33,7 @@ it('should render a heading with a line at the bottom', () => {
 
   ## MEdia
 
+  # 1
   **Esta renderizando:**
   **Esta pegando o pai através do svg**
       <S.Wrapper color={color} size={size} hideOnMobile={hideOnMobile}>
@@ -54,6 +55,25 @@ it('should render a heading with a line at the bottom', () => {
       },
     );
   });
+
+  # 2
+
+  **fugitivo**
+   ${media.greaterThan('medium')`
+      &:hover {
+        background: none;
+      }
+    `}
+
+  **busca**
+    expect(screen.getByRole('button', { name: /buy now/i })).toHaveStyleRule(
+      'background',
+      'none',
+      {
+        media: '(min-width: 768px)',
+        modifier: ':hover',
+      },
+    );
 
   ## Buscando um atributo com roles
 
