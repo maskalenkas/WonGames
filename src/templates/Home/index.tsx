@@ -45,7 +45,7 @@ const Home = ({
     <S.SectionNews>
       <Container>
         <Heading lineLeft lineColor="secondary">
-          News
+          New
         </Heading>
 
         <GameCardSlider items={newGames} color="black" />
