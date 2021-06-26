@@ -1,9 +1,5 @@
-import {
-  fireEvent,
-  getByLabelText,
-  render,
-  screen,
-} from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+import theme from 'styles/theme';
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import GameCard from '.';
@@ -16,8 +12,8 @@ const props = {
 };
 
 describe('<GameCard />', () => {
-  it('should render the component', () => {
-    const { debug, container } = renderWithTheme(<GameCard {...props} />);
+  it('should render correctly', () => {
+    const { container } = renderWithTheme(<GameCard {...props} />);
 
     expect(
       screen.getByRole('heading', { name: props.title }),
@@ -33,45 +29,38 @@ describe('<GameCard />', () => {
     );
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render price in label', () => {
     renderWithTheme(<GameCard {...props} />);
 
-    // Renderizando o preço sem a promoção
-    expect(screen.getByText(/235/i)).toBeInTheDocument();
+    const price = screen.getByText('R$ 235,00');
 
-    // Verificando se o preço não esta como promocional
-    expect(screen.getByText(/235/i)).not.toHaveStyle({
-      'text-decoration': 'line-through',
+    expect(price).not.toHaveStyle({ textDecoration: 'line-through' });
+    expect(price).toHaveStyle({ backgroundColor: theme.colors.secondary });
+  });
+
+  it('should render a line-through in price when promotional', () => {
+    renderWithTheme(<GameCard {...props} promotionalPrice="R$ 15,00" />);
+
+    expect(screen.getByText('R$ 235,00')).toHaveStyle({
+      textDecoration: 'line-through',
+    });
+
+    expect(screen.getByText('R$ 15,00')).not.toHaveStyle({
+      textDecoration: 'line-through',
     });
   });
 
-  it('should render a line-through in a price when promotional', () => {
-    renderWithTheme(<GameCard {...props} promotionalPrice="100" />);
-
-    const price = screen.getByText(/235/i);
-    const promotionalPrice = screen.getByText(/100/i);
-
-    // Verificando se renderiza os dois preços
-    expect(price).toBeInTheDocument();
-    expect(promotionalPrice).toBeInTheDocument();
-
-    // Verificando se o preço sem promoção esta cortado e o promocional não esta
-    expect(price).toHaveStyle({ 'text-decoration': 'line-through' });
-    expect(promotionalPrice).not.toHaveStyle({
-      'text-decoration': 'line-through',
-    });
-  });
-
-  it('should render a favorite icon when favorite is true', () => {
+  it('should render a filled Favorite icon when favorite is true', () => {
     renderWithTheme(<GameCard {...props} favorite />);
 
     expect(screen.getByLabelText(/remove from wishlist/i)).toBeInTheDocument();
   });
 
-  it('should call onFav method when Favorite is clicked', () => {
-    // Spy
+  it('should call onFav method when favorite is clicked', () => {
     const onFav = jest.fn();
     renderWithTheme(<GameCard {...props} favorite onFav={onFav} />);
 
@@ -80,7 +69,7 @@ describe('<GameCard />', () => {
     expect(onFav).toBeCalled();
   });
 
-  it('should render with ribbon', () => {
+  it('should render Ribbon', () => {
     renderWithTheme(
       <GameCard
         {...props}

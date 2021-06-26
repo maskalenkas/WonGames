@@ -14,13 +14,13 @@ const Sections = styled.section`
     }
     ${HighlightStyles.Wrapper} {
       ${media.lessThan('medium')`
-        margin-right: calc(-${theme.grid.gutter});
-        margin-left: calc(-${theme.grid.gutter});
+        margin-right: calc(-${theme.grid.gutter} / 2);
+        margin-left: calc(-${theme.grid.gutter} / 2);
       `}
     }
     ${GameCardSliderStyles.Wrapper} {
       ${media.lessThan('huge')`
-        margin-right: calc(-${theme.grid.gutter});
+        margin-right: calc(-${theme.grid.gutter} / 2);
       `}
     }
     margin-bottom: calc(${theme.spacings.large} * 2);
@@ -29,7 +29,7 @@ const Sections = styled.section`
 
 export const SectionBanner = styled.section`
   ${({ theme }) => css`
-    margin: ${theme.spacings.large} calc(-${theme.grid.gutter});
+    margin: ${theme.spacings.large} calc(-${theme.grid.gutter} / 2);
     ${media.greaterThan('medium')`
       margin: ${theme.spacings.large} 0;
       position: relative;

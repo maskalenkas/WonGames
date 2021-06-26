@@ -71,3 +71,16 @@ const wrapperModifiers = {
     background-color: ${theme.colors[color]}; *Unsado a cor recebida, no controlador*
   `,
 };
+
+
+
+### SUBSTITUINDO ESTILO POR HERANÇA
+export const texto = styled(HeadingStyles.Wrapper)`
+  ${({ color }) => css` <--- Color é uma prop recebida por herança do Heading
+    ${color === 'primary' &&
+    css`
+      color: green;
+      margin-top: 100px;
+    `}
+  `}
+`
