@@ -3,7 +3,7 @@
 
 # 1
 
-**Esse eu utilizei por conta que hasIcon é passado e CRIADO logo no wrapper. O meu componente não recebe isso, apenas o styled**
+**Esse eu utilizei por conta que hasIcon é passado e CRIADO logo no wrapper. O meu componente não recebe isso, apenas o styledComponent**
 
 **src/index**
 export type ButtonProps = {
@@ -41,3 +41,21 @@ export const Wrapper = styled.button<WrapperProps>`
 
 export const Wrapper = styled.button<ButtonProps>` 
 
+
+
+## 2 exemplo
+
+*src*
+export type CheckboxProps = {
+  label?: string;
+  labelFor?: string;
+  labelColor?: labelColorTypes;
+};
+
+**Pegando apenas a chave labelColor dentro de CheckBoxProps**
+*styles*
+export const Label = styled.label<Pick<CheckboxProps, 'labelColor'>>`
+  ${({ theme, labelColor }) => css`
+    color: ${theme.colors[labelColor!]};
+  `}
+`;
