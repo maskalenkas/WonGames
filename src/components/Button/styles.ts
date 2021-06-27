@@ -3,6 +3,8 @@ import { darken } from 'polished';
 
 import { ButtonProps } from '.';
 
+// hasIcon é criado e passado diretamente dentro do wrapper, por isso esta sendo pego aqui
+// Esta pegando as {...props} implicitamente
 type WrapperProps = {
   hasIcon: boolean;
 } & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal'>;

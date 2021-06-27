@@ -3,18 +3,13 @@ import * as S from './styles';
 
 //https://www.saltycrane.com/cheat-sheets/typescript/react/latest/
 
-// interface AnchorHTMLAttributes<T> extends HTMLAttributes<T> {
-//   download?: any;
-//   href?: string;
-//   hrefLang?: string;
-//   media?: string;
-//    ............
-
 // Componente pode receber href, onclick...
 type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>;
 
+// ...props esta sendo utilizado para passar onclick, href e etc... (propriedades de button, caso o as = a)
+// as é pego implicitamente mesmo com o pick<>, junto com as outras varias propriedades
 export type ButtonProps = {
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
