@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import theme from 'styles/theme';
 import { renderWithTheme } from 'utils/tests/helpers';
+
+import userEvent from '@testing-library/user-event';
 
 import Checkbox from '.';
 
@@ -34,5 +36,57 @@ describe('<Checkbox />', () => {
     expect(screen.getByText('checkbox label')).toHaveStyle({
       color: theme.colors.black,
     });
+  });
+
+  it('Vai testar a se ele é marcado ao clicar', async () => {
+    // Função mokada. Só serve para saber se const onCHeck foi chamado ou não
+    const onCheck = jest.fn();
+
+    renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} />);
+
+    // Verificando se a função passada não é chamada no inicio, sem clique
+    expect(onCheck).not.toHaveBeenCalled();
+
+    // -- Quando se trabalha com states, é usado o await
+    // Verificando se a função passada é chamda apenas uma vez
+    userEvent.click(screen.getByRole('checkbox'));
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1);
+    });
+
+    // -- onCheck(status); (status esta true logo no inicio)
+    // Verificando se ele foi chamado com true após clicado
+    expect(onCheck).toHaveBeenCalledWith(true);
+  });
+
+  it('Vai testar se o checkbox ja esta marcado por padrão', async () => {
+    // Função mokada. Só serve para saber se const onCHeck foi chamado ou não
+    const onCheck = jest.fn();
+
+    renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} isChecked />);
+
+    // Verificando se a função passada não é chamada no inicio, sem clique
+    expect(onCheck).not.toHaveBeenCalled();
+
+    // Verificando se a função passada é chamda apenas uma vez
+    userEvent.click(screen.getByRole('checkbox'));
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1);
+    });
+
+    // -- onCheck(status); (status esta false logo no inicio, pelo isChcked)
+    // Verificando se ele foi chamado com false após clicado
+    expect(onCheck).toHaveBeenCalledWith(false);
+  });
+
+  it('Vai testar se o checkbox esta acessivel com o TAB', async () => {
+    renderWithTheme(<Checkbox label="checkbox" labelFor="checkbox" />);
+
+    // Vai verificar se no inicio de tudo é a pagian que esta em foco. Sempre é ela que esta em foco quando inicia
+    expect(document.body).toHaveFocus();
+
+    // Vai testar se o foco foi para o checkbox
+    userEvent.tab();
+    expect(screen.getByLabelText('checkbox')).toHaveFocus();
   });
 });
