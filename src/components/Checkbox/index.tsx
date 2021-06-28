@@ -13,8 +13,6 @@ export type CheckboxProps = {
   value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-// Impedindo de labelfor ser undefined
-// Renderização de label só acontece se ela for passada
 // Adicionando varios atributos do proprio Input com a simples utilização da linha } & InputHTMLAttributes<HTMLInputElement>;
 const Checkbox = ({
   onCheck,
@@ -38,7 +36,7 @@ const Checkbox = ({
 
   return (
     <S.Wrapper>
-      {/* O onchange padrão vai chamar o meu onChange para marcar e desmarcar, mesma coisa com checked */}
+      {/* onChange, type,id, checked e value são valores padrões pegos com HtmlAtributtes*/}
       <S.Input
         id={labelFor}
         type="checkbox"

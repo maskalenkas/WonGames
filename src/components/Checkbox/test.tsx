@@ -8,7 +8,9 @@ import Checkbox from '.';
 
 describe('<Checkbox />', () => {
   it('should render with label', () => {
-    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />);
+    const { container } = renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" />,
+    );
     // Formas de pegas os inputs/label:
 
     // input a partir da Role
@@ -20,15 +22,17 @@ describe('<Checkbox />', () => {
     // O htmlFor é transformado em for
     // a label a partir do texto dela
     expect(screen.getByText(/checkbox label/i)).toHaveAttribute('for', 'check');
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  it('Vai verificar se a label NÃO é renderizada caso não seja passada', () => {
+  it('Vai testar se o Checkbox renderiza sem label, caso ela não seja passada', () => {
     renderWithTheme(<Checkbox />);
 
     expect(screen.queryByText('checkbox label')).not.toBeInTheDocument();
   });
 
-  it('vai renderizar uma label preta', () => {
+  it('vai testar se o Checkbox é renderizado com uma label preta com a prop labelColor', () => {
     renderWithTheme(
       <Checkbox label="checkbox label" labelFor="check" labelColor="black" />,
     );
@@ -38,7 +42,7 @@ describe('<Checkbox />', () => {
     });
   });
 
-  it('Vai testar a se ele é marcado ao clicar', async () => {
+  it('Vai testar se o Checkbox é marcado ao clicar', async () => {
     // Função mokada. Só serve para saber se const onCHeck foi chamado ou não
     const onCheck = jest.fn();
 
@@ -59,16 +63,14 @@ describe('<Checkbox />', () => {
     expect(onCheck).toHaveBeenCalledWith(true);
   });
 
-  it('Vai testar se o checkbox ja esta marcado por padrão', async () => {
-    // Função mokada. Só serve para saber se const onCHeck foi chamado ou não
+  it('Vai testar se o Checkbox inicia marcado com a prop isChecked', async () => {
     const onCheck = jest.fn();
 
     renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} isChecked />);
 
-    // Verificando se a função passada não é chamada no inicio, sem clique
     expect(onCheck).not.toHaveBeenCalled();
 
-    // Verificando se a função passada é chamda apenas uma vez
+    // Verificando se a função é chamada após o clique
     userEvent.click(screen.getByRole('checkbox'));
     await waitFor(() => {
       expect(onCheck).toHaveBeenCalledTimes(1);
