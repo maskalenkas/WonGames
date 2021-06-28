@@ -21,6 +21,7 @@ const Radio = ({
   ...props
 }: RadioProps) => {
   const onChange = () => {
+    // Não controlado
     if (onCheck) {
       onCheck(value);
     }

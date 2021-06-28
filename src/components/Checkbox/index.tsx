@@ -23,6 +23,7 @@ const Checkbox = ({
   value,
   ...props
 }: CheckboxProps) => {
+  // Controlado
   const [checked, setChecked] = useState(isChecked);
 
   const onChange = () => {
