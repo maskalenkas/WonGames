@@ -1,3 +1,5 @@
+## Envia o estado se esta marcado ou não
+
 ## Formas de pegaR os inputs/label:
 
 # Render

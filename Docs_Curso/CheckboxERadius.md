@@ -1,0 +1,1 @@
+## checkbox envia o estado se esta marcado ou não, o radius envia o value
