@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0';
 import TextField, { TextFieldProps } from '.';
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 
 export default {
   title: 'TextField',
@@ -10,6 +11,7 @@ export default {
     id: 'Email',
     initialValue: '',
     placeholder: 'john.cage@gmail.com',
+    icon: <AddShoppingCart />,
   },
   argTypes: {
     onInput: { action: 'changed' },

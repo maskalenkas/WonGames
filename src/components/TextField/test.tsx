@@ -1,5 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 
 import { renderWithTheme } from 'utils/tests/helpers';
 
@@ -38,8 +39,11 @@ describe('<TextField />', () => {
 
     const input = screen.getByRole('textbox');
     const text = 'This is my new text';
+
+    // Fazendo com que tenha um texto no input
     userEvent.type(input, text);
 
+    // Testando a chamada nesse input
     await waitFor(() => {
       expect(input).toHaveValue(text);
       expect(onInput).toHaveBeenCalledTimes(text.length);
@@ -57,5 +61,67 @@ describe('<TextField />', () => {
 
     userEvent.tab();
     expect(input).toHaveFocus();
+  });
+
+  it('Vai testar a renderização do icone ao lado do LabelText caso seja passada a prop icon', () => {
+    renderWithTheme(
+      <TextField icon={<AddShoppingCart data-testid="icon" />} />,
+    );
+
+    expect(screen.getByTestId('icon')).toBeInTheDocument();
+  });
+
+  it('Vai testar se o icone renderiza para a direta caso seja passada a prop iconPosition=right', () => {
+    renderWithTheme(
+      <TextField
+        iconPosition="right"
+        icon={<AddShoppingCart data-testid="icon" />}
+      />,
+    );
+
+    expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 });
+  });
+
+  it('Vai testar se o TextArea fica indigitavel caso seja passada a prop disabled', async () => {
+    const onInput = jest.fn();
+
+    renderWithTheme(
+      <TextField
+        onInput={onInput}
+        label="TextField"
+        labelFor="TextField"
+        id="TextField"
+        disabled
+      />,
+    );
+
+    const input = screen.getByRole('textbox');
+    expect(input).toBeDisabled();
+
+    const text = 'This is my new text';
+    userEvent.type(input, text);
+
+    // Vai verificar se fica indigitavel caso esteja desativado
+    await waitFor(() => {
+      expect(input).not.toHaveValue(text);
+    });
+    expect(onInput).not.toHaveBeenCalled();
+  });
+
+  it('Vai testar se com o TextField desabilitado, o TAB não funciona', () => {
+    renderWithTheme(
+      <TextField
+        label="TextField"
+        labelFor="TextField"
+        id="TextField"
+        disabled
+      />,
+    );
+
+    const input = screen.getByLabelText('TextField');
+    expect(document.body).toHaveFocus();
+
+    userEvent.tab();
+    expect(input).not.toHaveFocus();
   });
 });
