@@ -4,7 +4,7 @@ import { Email } from '@styled-icons/material-outlined';
 import TextField, { TextFieldProps } from '.';
 
 export default {
-  title: 'Form/Checkbox',
+  title: 'Form/TextField',
   component: TextField,
   args: {
     label: 'E-mail',
