@@ -10,6 +10,7 @@ export type CheckboxProps = {
   label?: string;
   labelFor?: string;
   labelColor?: labelColorTypes;
+  // Recebendo um valor ja presente em input, porem explicitamente
   value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
