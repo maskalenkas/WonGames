@@ -21,3 +21,24 @@ export default {
 title: 'Form/Checkbox',
 args: {},
 ... resto
+
+
+## Fazendo uma nova opção nos stories:
+
+**Opção padrão**
+export const Default: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+);
+
+**Nova opção com o nome withError**
+export const withError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+);
+
+withError.args = {
+  error: 'Ops...something is wrong',
+};
