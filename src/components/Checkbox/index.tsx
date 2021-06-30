@@ -21,7 +21,7 @@ const Checkbox = ({
   labelFor = '',
   labelColor = 'white',
   value,
-  ...props
+  ...props // Passando os atributos do InputHTML como type, change e etc...
 }: CheckboxProps) => {
   // Controlado
   const [checked, setChecked] = useState(isChecked);
@@ -38,6 +38,8 @@ const Checkbox = ({
   return (
     <S.Wrapper>
       {/* onChange, type,id, checked e value são valores padrões pegos com HtmlAtributtes*/}
+      {/* COm ...props dentro, o que for passado no story por exemplo de input, ficara no input */}
+      {/* O que eu colocar em props, não sera usado em styles */}
       <S.Input
         id={labelFor}
         type="checkbox"

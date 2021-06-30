@@ -26,6 +26,8 @@ type WrapperProps = { hasIcon: boolean } & Pick<
   'size' | ' alguma outra props que queira pegar'
 >
 
+*Depois só utiliza no wrapper*
+
 **OU**
 
 *Vai pegar tudo, execto size e a outra prop*
@@ -43,7 +45,7 @@ export const Wrapper = styled.button<ButtonProps>`
 
 
 
-## 2 exemplo
+## 2 exemplo, pegando diretamente dentro sem criar type
 
 *src*
 export type CheckboxProps = {

@@ -99,6 +99,8 @@ describe('<TextField />', () => {
     expect(input).toBeDisabled();
 
     const text = 'This is my new text';
+
+    // Colocando o texto dentro do input
     userEvent.type(input, text);
 
     // Vai verificar se fica indigitavel caso esteja desativado
