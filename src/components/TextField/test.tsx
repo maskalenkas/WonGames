@@ -8,9 +8,23 @@ import TextField from '.';
 
 describe('<TextField />', () => {
   it('Vai testar se o TextField renderiza com uma label caso seja passado a prop label', () => {
-    renderWithTheme(<TextField label="Label" labelFor="Field" id="Field" />);
+    const { container } = renderWithTheme(
+      <TextField label="Label" labelFor="Field" id="Field" />,
+    );
 
     expect(screen.getByLabelText('Label')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('Isso vai testar se a renderização com erro esta funcionando com a prop error', () => {
+    const { container } = renderWithTheme(
+      <TextField
+        icon={<AddShoppingCart data-testid="icon" />}
+        label="TextField"
+        labelFor="TextField"
+        error="Error message"
+      />,
+    );
   });
 
   it('Vai testar se o TextField renderiza sem a label, caso a prop label não seja passada', () => {
