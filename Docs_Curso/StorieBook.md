@@ -13,3 +13,11 @@ export default {
     layout: 'fullscreen',
   },
 } as Meta;
+
+
+## Separando os stories:
+
+*Só colcoar nos stories do componente algo como*
+title: 'Form/Checkbox',
+args: {},
+... resto

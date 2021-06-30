@@ -84,3 +84,34 @@ export const texto = styled(HeadingStyles.Wrapper)`
     `}
   `}
 `
+
+
+### Fazendo um circuito de decisões quando é enviado algo alem de boolean para o style
+
+**Index**
+export type TextFieldProps = {
+  *É error:string o que vai ser recebido no index, porem no style eu tenho que ter uma decisão caso isso seja preenchido*
+  error?: string,
+  disabled = false,
+} & InputHTMLAttributes<HTMLInputElement>;
+
+const TextField = ({ error }: TextFieldProps) => {
+  *Transformando a string em algo booleano, pois la vai ser recebido boolean, e não string*
+  return <S.Wrapper disabled={disabled} error={!!error}></S.Wrapper>;
+};
+
+export default TextField;
+
+
+**Style**
+
+*Transformando error em boolean e pegando o restante que eu quero com pick*
+type WrapperProps = Pick<TextFieldProps, 'disabled'> & { error?: boolean };
+
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, error, disabled }) => css`
+    ${!!error && wrapperModifiers.error(theme)}
+    ${disabled && wrapperModifiers.disabled(theme)}
+  `}
+`;
+
