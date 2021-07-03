@@ -133,7 +133,6 @@ export default TextField;
 
 
 **Style**
-
 type WrapperProps = Pick<TextFieldProps, 'disabled' | 'error'>;
 
 export const Wrapper = styled.div<WrapperProps>`
