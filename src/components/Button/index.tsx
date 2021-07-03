@@ -33,7 +33,7 @@ const Button = ({
     {...props}
   >
     {icon}
-    {console.log(props)}
+
     {!!children && <span>{children}</span>}
   </S.Wrapper>
 );
