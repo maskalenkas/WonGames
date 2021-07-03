@@ -25,7 +25,7 @@ const Auth = ({ title, children }: AuthProps) => (
         Won games 2020 Todos os direitos Reservados
       </S.BannerFooter>
     </S.BannerBlock>
-    {/* / Banner */}
+    {/* / Bannerr */}
 
     {/* Content */}
     <S.Content>
