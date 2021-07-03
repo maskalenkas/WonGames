@@ -82,7 +82,7 @@ const wrapperModifiers = {
   `,
 };
 
-type WrapperProps = Pick<TextFieldProps, 'disabled'> & { error?: boolean };
+type WrapperProps = Pick<TextFieldProps, 'disabled' | 'error'>;
 
 export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, error, disabled }) => css`

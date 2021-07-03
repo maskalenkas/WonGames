@@ -8,8 +8,6 @@ type ButtonTypes =
   | AnchorHTMLAttributes<HTMLAnchorElement>
   | ButtonHTMLAttributes<HTMLButtonElement>;
 
-// ...props esta sendo utilizado para passar onclick, href e etc... (propriedades de button, caso o as = a)
-// as é pego implicitamente mesmo com o pick<>, junto com as outras varias propriedades
 export type ButtonProps = {
   size?: 'small' | 'medium' | 'large';
   fullWidth?: boolean;
@@ -18,6 +16,7 @@ export type ButtonProps = {
   as?: React.ElementType;
 } & ButtonTypes;
 
+// ...props vai ter as, que por sua vez pode ter a e o restante dos atribtos dele
 const Button = ({
   children,
   icon,
@@ -34,6 +33,7 @@ const Button = ({
     {...props}
   >
     {icon}
+    {console.log(props)}
     {!!children && <span>{children}</span>}
   </S.Wrapper>
 );
