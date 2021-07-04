@@ -14,27 +14,34 @@ const Auth = ({ title, children }: AuthProps) => (
   <S.Wrapper>
     {/* Banner */}
     <S.BannerBlock>
-      <Logo />
+      {/* Vai ser usado para quebrar o overlay */}
+      <S.BannerContent>
+        <Logo />
 
-      <Heading>All your favorite games in one place</Heading>
-      <S.BannerSubtitle>
-        <strong>WON</strong>is the best and most complete gaming platform.
-      </S.BannerSubtitle>
+        <div>
+          <Heading>All your favorite games in one place</Heading>
+          <S.BannerSubtitle>
+            <strong>WON</strong> is the best and most complete gaming platform.
+          </S.BannerSubtitle>
+        </div>
 
-      <S.BannerFooter>
-        Won games 2020 Todos os direitos Reservados
-      </S.BannerFooter>
+        <S.BannerFooter>
+          Won games 2020 Todos os direitos Reservados
+        </S.BannerFooter>
+      </S.BannerContent>
     </S.BannerBlock>
     {/* / Bannerr */}
 
     {/* Content */}
     <S.Content>
-      <Logo color="black" size="normal" />
-      <Heading color="black" lineColor="secondary" lineLeft>
-        {title}
-      </Heading>
+      <S.ContentWrapper>
+        <Logo color="black" size="large" />
+        <Heading color="black" lineColor="secondary" lineLeft>
+          {title}
+        </Heading>
 
-      {children}
+        {children}
+      </S.ContentWrapper>
     </S.Content>
     {/* / Content */}
   </S.Wrapper>
