@@ -16,10 +16,10 @@ const Auth = ({ title, children }: AuthProps) => (
     <S.BannerBlock>
       {/* Vai ser usado para quebrar o overlay */}
       <S.BannerContent>
-        <Logo />
+        <Logo id="banner" />
 
         <div>
-          <Heading>All your favorite games in one place</Heading>
+          <Heading size="huge">All your favorite games in one place</Heading>
           <S.BannerSubtitle>
             <strong>WON</strong> is the best and most complete gaming platform.
           </S.BannerSubtitle>
@@ -35,7 +35,7 @@ const Auth = ({ title, children }: AuthProps) => (
     {/* Content */}
     <S.Content>
       <S.ContentWrapper>
-        <Logo color="black" size="large" />
+        <Logo color="black" size="large" id="form" />
         <Heading color="black" lineColor="secondary" lineLeft>
           {title}
         </Heading>
