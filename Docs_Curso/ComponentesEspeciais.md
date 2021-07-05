@@ -9,3 +9,6 @@
 
 # Exemplo de utilização do overlay
 *Auth*
+
+# Exemplo de criação de wrapper para icone
+*TextField*
