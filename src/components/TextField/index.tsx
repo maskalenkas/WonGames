@@ -37,6 +37,9 @@ const TextField = ({
     }
   };
 
+  // É usado um input falso m volta do input real para colocar o icone e organizar tudo.
+  // inputwrapper não é input, é apenas uma div com border, e e retirado a borda do input real
+
   return (
     <S.Wrapper disabled={disabled} error={error}>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
