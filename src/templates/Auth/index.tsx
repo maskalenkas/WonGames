@@ -39,7 +39,6 @@ const Auth = ({ title, children }: AuthProps) => (
         <Heading color="black" lineColor="secondary" lineLeft>
           {title}
         </Heading>
-
         {children}
       </S.ContentWrapper>
     </S.Content>
