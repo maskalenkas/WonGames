@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FormSignIn /> deve renderizar os forms 1`] = `
+exports[`<FormSignIn /> should render the form 1`] = `
+.c4 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -43,12 +49,6 @@ exports[`<FormSignIn /> deve renderizar os forms 1`] = `
 
 .c3 > svg {
   width: 100%;
-}
-
-.c4 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
 }
 
 .c8 {
@@ -223,7 +223,7 @@ exports[`<FormSignIn /> deve renderizar os forms 1`] = `
         <div
           class="c9"
         >
-          Don´t have an account?
+          Don’t have an account?
            
           <a
             href="/sign-up"

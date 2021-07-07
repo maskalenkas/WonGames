@@ -1,31 +1,33 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
 import FormSignIn from '.';
 
 describe('<FormSignIn />', () => {
-  it('deve renderizar os forms', () => {
+  it('should render the form', () => {
     const { container } = renderWithTheme(<FormSignIn />);
 
     expect(screen.getByPlaceholderText(/email/i)).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/password/i)).toBeInTheDocument();
-    expect(screen.getByRole('button')).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /sign in now/i }),
+    ).toBeInTheDocument();
 
     expect(container.parentElement).toMatchSnapshot();
   });
 
-  it('deve renderizar o forgot password link', () => {
+  it('should render the forgot password link', () => {
     renderWithTheme(<FormSignIn />);
 
     expect(
-      screen.getByRole('link', { name: /forgot your password?/i }),
+      screen.getByRole('link', { name: /forgot your password\?/i }),
     ).toBeInTheDocument();
   });
 
-  it('deve renderizar o texto do sign-up', () => {
+  it('should render text to sign up if already have an account', () => {
     renderWithTheme(<FormSignIn />);
 
-    expect(screen.getByText(/don´t have an account/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /sign up/i })).toBeInTheDocument();
+    expect(screen.getByText(/don’t have an account\?/i)).toBeInTheDocument();
   });
 });

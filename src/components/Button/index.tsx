@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, forwardRef } from 'react';
 import * as S from './styles';
 
 //https://www.saltycrane.com/cheat-sheets/typescript/react/latest/
@@ -17,19 +17,25 @@ export type ButtonProps = {
 } & ButtonTypes;
 
 // ...props vai ter as, que por sua vez pode ter a e o restante dos atribtos dele
-const Button = ({
-  children,
-  icon,
-  size = 'medium',
-  fullWidth = false,
-  minimal = false,
-  ...props
-}: ButtonProps) => (
+/* href tem que chegar em um a. Ele vai para o <button as="a"> > vai passar o href para o <wrapper as="a">*/
+// Esta retornando um forward ref
+const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
+  {
+    children,
+    icon,
+    size = 'medium',
+    fullWidth = false,
+    minimal = false,
+    ...props
+  },
+  ref,
+) => (
   <S.Wrapper
     size={size}
     fullWidth={fullWidth}
     hasIcon={!!icon}
     minimal={minimal}
+    ref={ref}
     {...props}
   >
     {icon}
@@ -38,4 +44,4 @@ const Button = ({
   </S.Wrapper>
 );
 
-export default Button;
+export default forwardRef(Button);

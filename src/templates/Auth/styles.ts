@@ -51,6 +51,12 @@ export const BannerContent = styled.div`
     color: ${theme.colors.white};
     position: relative;
     z-index: ${theme.layers.base};
+
+    /* Fazendo com que o a tenha o espaçamento apenas do conteudo dentro dele*/
+    a {
+      width: fit-content;
+      height: fit-content;
+    }
   `}
 `;
 
@@ -69,7 +75,7 @@ export const BannerFooter = styled.footer`
 export const Content = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.white};
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
   `}
