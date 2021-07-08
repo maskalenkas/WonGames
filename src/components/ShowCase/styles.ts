@@ -6,6 +6,7 @@ import * as HeadingStyles from 'components/Heading/styles';
 import * as GameCardSliderStyles from 'components/GameCardSlider/styles';
 import * as HighlightStyles from 'components/Highlight/styles';
 
+// Modificando o atributo de div para section
 export const Wrapper = styled(Container).attrs({ as: 'section' })`
   ${({ theme }) => css`
     ${HeadingStyles.Wrapper},
