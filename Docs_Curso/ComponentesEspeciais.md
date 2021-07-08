@@ -15,3 +15,6 @@
 
 # Exemplo de passar href para componentes funcionais
 *Menu > button*
+
+# Exemplo de um StoryBook completo
+*ShowCase*
