@@ -13,6 +13,9 @@
 # Exemplo de criação de wrapper para icone
 *TextField*
 
+# Exemplo de utilização do icone
+*GameInfo*
+
 # Exemplo de passar href para componentes funcionais
 *Menu > button*
 
