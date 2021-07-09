@@ -20,37 +20,54 @@ const props = {
   freeHighlight: highlightMock,
 };
 
+// Verificando se os elementos são renderizados quadno HOme é chamada
+// Eu não preciso testar coisas que ja foram testadas. Showcase por exemplo ja foi testado nele mesmo, por isso eu só verifico se o SHOWCASE foi renderizado, e não o highlights que tem dentro dele por exemplo
+
+// Ao invés de pegar o menu real quando ele for chamado, ele vai pegar essa div
+jest.mock('components/Menu', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-menu"></div>;
+    },
+  };
+});
+
+jest.mock('components/Footer', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-footer"></div>;
+    },
+  };
+});
+
+jest.mock('components/ShowCase', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-showcase"></div>;
+    },
+  };
+});
+
+jest.mock('components/BannerSlider', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="mock-bannerSlider"></div>;
+    },
+  };
+});
+
 describe('<Home />', () => {
-  it('should render menu and footer', () => {
+  it('deve renderizar todos os componentes', () => {
     renderWithTheme(<Home {...props} />);
 
-    // menu
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-
-    // footer
-    expect(
-      screen.getByRole('heading', { name: /follow us/i }),
-    ).toBeInTheDocument();
-
-    // logos (menu/footer)
-    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2);
-
-    expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: /most popular/i }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: /upcoming/i }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { name: /free games/i }),
-    ).toBeInTheDocument();
-
-    // banner
-    expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1);
-    // card game ( 5 sections com 1 card cada = 5x1 = 5)
-    expect(screen.getAllByText(/population zero/i)).toHaveLength(5);
-    // highlight
-    expect(screen.getAllByText(/read dead is back!/i)).toHaveLength(3);
+    // Renderizando apenas os componentes mocados
+    expect(screen.getByTestId('mock-menu')).toBeInTheDocument();
+    expect(screen.getByTestId('mock-footer')).toBeInTheDocument();
+    expect(screen.getAllByTestId('mock-showcase')).toHaveLength(5);
+    expect(screen.getByTestId('mock-bannerSlider')).toBeInTheDocument();
   });
 });

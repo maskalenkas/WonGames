@@ -18,3 +18,9 @@
 
 # Exemplo de um StoryBook completo
 *ShowCase*
+
+# Exemplo de função mokada
+*test/StoryBook*
+
+# Exemplo de componente mokado
+*test/Home*

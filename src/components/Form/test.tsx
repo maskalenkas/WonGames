@@ -12,6 +12,6 @@ describe('<Form />', () => {
       </FormWrapper>,
     );
 
-    expect(container.parentElement).toMatchInlineSnapshot();
+    expect(container.parentElement).toMatchSnapshot();
   });
 });
