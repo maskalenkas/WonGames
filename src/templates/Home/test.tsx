@@ -23,25 +23,7 @@ const props = {
 // Verificando se os elementos são renderizados quadno HOme é chamada
 // Eu não preciso testar coisas que ja foram testadas. Showcase por exemplo ja foi testado nele mesmo, por isso eu só verifico se o SHOWCASE foi renderizado, e não o highlights que tem dentro dele por exemplo
 
-// Ao invés de pegar o menu real quando ele for chamado, ele vai pegar essa div
-jest.mock('components/Menu', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="mock-menu"></div>;
-    },
-  };
-});
-
-jest.mock('components/Footer', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="mock-footer"></div>;
-    },
-  };
-});
-
+// Ao invés de pegar o footer real quando ele for chamado, ele vai pegar essa div
 jest.mock('components/ShowCase', () => {
   return {
     __esModule: true,
@@ -65,8 +47,6 @@ describe('<Home />', () => {
     renderWithTheme(<Home {...props} />);
 
     // Renderizando apenas os componentes mocados
-    expect(screen.getByTestId('mock-menu')).toBeInTheDocument();
-    expect(screen.getByTestId('mock-footer')).toBeInTheDocument();
     expect(screen.getAllByTestId('mock-showcase')).toHaveLength(5);
     expect(screen.getByTestId('mock-bannerSlider')).toBeInTheDocument();
   });
