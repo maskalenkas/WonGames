@@ -6,12 +6,12 @@ import GameInfo from '.';
 const props = {
   title: 'My game Title',
   description: 'My game Description',
-  price: 210,
+  price: '210,00',
 };
 
 describe('<GameInfo />', () => {
   it('Vai renderizar o componente', () => {
-    renderWithTheme(<GameInfo {...props} />);
+    const { container } = renderWithTheme(<GameInfo {...props} />);
 
     // Esperar por um heading (title)
     expect(screen.getByRole('heading', { name: /My game title/i }));
@@ -20,7 +20,9 @@ describe('<GameInfo />', () => {
     expect(screen.getByText(/my game description/i)).toBeInTheDocument();
 
     // Esperar pelo price
-    expect(screen.getByText(props.price)).toBeInTheDocument();
+    expect(screen.getByText(/\$210,00/)).toBeInTheDocument();
+
+    expect(container.parentElement).toMatchSnapshot();
   });
 
   it('Vai renderizar os botões', () => {

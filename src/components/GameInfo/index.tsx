@@ -10,7 +10,7 @@ import * as S from './styles';
 export type GameInfoProps = {
   title: string;
   description: string;
-  price: number;
+  price: string;
 };
 
 const GameInfo = ({ description, price, title }: GameInfoProps) => (
