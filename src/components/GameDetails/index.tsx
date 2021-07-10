@@ -5,21 +5,28 @@ import MediaMatch from 'components/MediaWatch';
 
 import * as S from './styles';
 
-type Platform = 'windows' | 'linux' | 'mac';
+type PlatformTypes = 'windows' | 'linux' | 'mac';
 
-type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18';
+type RatingTypes = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18';
+
+type GenresType = 'Role-playing' | 'Narrative';
 
 export type GameDetailsProps = {
-  platforms: Platform[];
-  rating: Rating;
+  platforms: PlatformTypes[];
+  rating: RatingTypes;
   developer: string;
   releaseDate: string;
+  genres: GenresType[];
+  publisher: string;
 };
 
 const GameDetails = ({
   developer,
   platforms,
   releaseDate,
+  rating,
+  genres,
+  publisher,
 }: GameDetailsProps) => {
   // Definindo um padrão que vai ser usado
   const platformIcons = {
@@ -56,7 +63,7 @@ const GameDetails = ({
         <S.Block>
           <S.Label>Platforms</S.Label>
           <S.IconsWrapper>
-            {platforms.map((icon: Platform) => (
+            {platforms.map((icon: PlatformTypes) => (
               <S.Icon key={icon}>{platformIcons[icon]}</S.Icon>
             ))}
           </S.IconsWrapper>
@@ -64,17 +71,19 @@ const GameDetails = ({
 
         <S.Block>
           <S.Label>Publisher</S.Label>
-          <S.Description>2K</S.Description>
+          <S.Description>{publisher}</S.Description>
         </S.Block>
 
         <S.Block>
           <S.Label>Rating</S.Label>
-          <S.Description>18+</S.Description>
+          <S.Description>
+            {rating == 'BR0' ? 'free' : `${rating.replace('BR', '')}+`}
+          </S.Description>
         </S.Block>
 
         <S.Block>
           <S.Label>Genres</S.Label>
-          <S.Description>Action / Adventure</S.Description>
+          <S.Description>{genres.join(' / ')}</S.Description>
         </S.Block>
       </S.Content>
     </S.Wrapper>

@@ -8,6 +8,8 @@ const props: GameDetailsProps = {
   platforms: ['windows', 'mac', 'linux'],
   releaseDate: '2020-11-21T23:00:00',
   rating: 'BR0',
+  genres: ['Role-playing', 'Narrative'],
+  publisher: '2K',
 };
 
 describe('<GameDetails />', () => {
@@ -52,8 +54,14 @@ describe('<GameDetails />', () => {
   });
 
   it('vai renderizar a classificação como 18+', () => {
-    renderWithTheme(<GameDetails {...props} />);
+    renderWithTheme(<GameDetails {...props} rating="BR18" />);
 
     expect(screen.getByText(/18\+/i)).toBeInTheDocument();
+  });
+
+  it('vai renderizar a lista de generos', () => {
+    renderWithTheme(<GameDetails {...props} rating="BR18" />);
+
+    expect(screen.getByText(/role-playing \/ narrative/i)).toBeInTheDocument();
   });
 });
