@@ -14,16 +14,22 @@
 *TextField*
 
 # Exemplo de utilização do icone
-*GameInfo*
+*GameInfo* & *GameDetails*(GameDetails vai definir um padrão)
 
 # Exemplo de passar href para componentes funcionais
 *Menu > button*
 
-# Exemplo de um StoryBook completo
+# Exemplo de uma estrutura de um StoryBook completo
 *ShowCase*
+
+# Exemplo de opções no Storybook
+*GameDetails*
 
 # Exemplo de função mokada
 *test/StoryBook*
 
 # Exemplo de componente mokado
 *test/Home*
+
+# Exemplo de como definir o que vai ter dentro de um array e a colocar data
+*GameDetails*
