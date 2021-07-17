@@ -33,3 +33,6 @@
 
 # Exemplo de como definir o que vai ter dentro de um array e a colocar data
 *GameDetails*
+
+# Exemplo de uso dangerousHtml
+*TextCOntent*
