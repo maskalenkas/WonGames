@@ -42,3 +42,9 @@
 
 # Exemplo de teste com mediaquery
 *TextContent teste*
+
+# Exempl de escutar a tecla esc para fechar um medo
+*Gallery*
+
+# Exemplo de modal
+*Gallery*

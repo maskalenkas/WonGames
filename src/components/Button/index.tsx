@@ -19,6 +19,13 @@ export type ButtonProps = {
 // ...props vai ter as, que por sua vez pode ter a e o restante dos atribtos dele
 /* href tem que chegar em um a. Ele vai para o <button as="a"> > vai passar o href para o <wrapper as="a">*/
 // Esta retornando um forward ref
+
+// FUnciona assim:
+//<Link href="/sign-in" passHref>
+// <Button as="a">Sign in</Button>
+//</Link>
+
+// O passHref vai chegar aqui e vai ser tratado, jogando para o wrapper que é um a
 const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
   {
     children,
