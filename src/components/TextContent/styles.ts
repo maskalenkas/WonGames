@@ -33,6 +33,7 @@ export const Wrapper = styled.div`
       color: ${theme.colors.primary};
     }
     img {
+      /* Ele alcança o maximo de 70rem, e se for menor que 70rem ele pega 100% da tela */
       max-width: min(70rem, 100%);
       margin-bottom: ${theme.spacings.xsmall};
     }

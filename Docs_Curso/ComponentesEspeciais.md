@@ -36,3 +36,9 @@
 
 # Exemplo de uso dangerousHtml
 *TextCOntent*
+
+# Exemplo de renderização de imagem vindo de api e aplicação de estilo nele
+*TextCOntent - styles*
+
+# Exemplo de teste com mediaquery
+*TextContent teste*
