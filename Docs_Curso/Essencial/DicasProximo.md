@@ -1,0 +1,1 @@
+# Criar um componente chamado base para usar em todos os templates
