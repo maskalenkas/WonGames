@@ -1,8 +1,9 @@
-import Gallery, { GalleryImageProps } from 'components/Gallery';
+import Base from 'templates/Base';
+
 import GameInfo, { GameInfoProps } from 'components/GameInfo';
+import Gallery, { GalleryImageProps } from 'components/Gallery';
 
 import * as S from './styles';
-import Base from 'templates/Base';
 
 export type GameTemplateProps = {
   cover: string;
