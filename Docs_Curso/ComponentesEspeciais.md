@@ -48,3 +48,6 @@
 
 # Exemplo de modal
 *Gallery*
+
+# Exemplo de como escurecer a imagem do background 
+*components/highlights*

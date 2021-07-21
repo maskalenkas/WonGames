@@ -32,6 +32,8 @@ export const Wrapper = styled.section<WrapperProps>`
     background-size: cover;
     height: 23rem;
     display: grid;
+
+    /* Pulo do gato, efeito de escurecimento na imagem */
     &::after {
       content: '';
       position: absolute;

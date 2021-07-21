@@ -13,8 +13,10 @@ export type GameTemplateProps = {
 
 const Game = ({ cover, gameInfo, gallery }: GameTemplateProps) => (
   <Base>
+    {/* Imagem la em cima */}
     <S.Cover src={cover} role="image" aria-label="cover" />
 
+    {/* Conteudo */}
     <S.Main>
       <S.SectionGameInfo>
         <GameInfo {...gameInfo} />
