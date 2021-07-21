@@ -1,5 +1,5 @@
-# Criar um componente chamado base para usar em todos os templates
-
-# Criar um componente chamado Container para usar em varios componentes
+# Componentes a se importar:
+componentes/Container
+templates/Base
 
 # Criar pasta Types
