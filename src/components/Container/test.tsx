@@ -13,18 +13,6 @@ describe('<Container />', () => {
       theme.grid.container,
     );
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      .c0 {
-        max-width: 130rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: calc(3.2rem);
-        padding-right: calc(3.2rem);
-      }
-
-      <div
-        class="c0"
-      />
-    `);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

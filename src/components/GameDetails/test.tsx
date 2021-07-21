@@ -64,4 +64,16 @@ describe('<GameDetails />', () => {
 
     expect(screen.getByText(/role-playing \/ narrative/i)).toBeInTheDocument();
   });
+
+  it('should render the developer', () => {
+    renderWithTheme(<GameDetails {...props} />);
+
+    expect(screen.getByText(/Different Tales/i)).toBeInTheDocument();
+  });
+
+  it('should render the publisher', () => {
+    renderWithTheme(<GameDetails {...props} />);
+
+    expect(screen.getByText(/2k/i)).toBeInTheDocument();
+  });
 });
