@@ -11,9 +11,6 @@
 # Exemplo de utilização do icone
 *components/GameInfo* & *components/GameDetails*(GameDetails vai definir um padrão)
 
-# Exemplo de passar href para componentes funcionais
-*components/Menu > components/button*
-
 # Exemplo de como definir o que vai ter dentro de um array e a colocar data
 *components/GameDetails*
 
@@ -69,6 +66,7 @@
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
+**NextJs**
 
-
-
+# Exemplo de passar href para componentes funcionais
+*components/Menu > components/button*
