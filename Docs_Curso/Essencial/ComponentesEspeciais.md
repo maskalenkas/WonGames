@@ -51,8 +51,10 @@
 
 # Exemplo de componente mokado
 *template/Home/test*
+*template/Games/test*
 
 # Exemplo de teste com mediaquery
+*template/game/test*
 *test/TextContent*
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
