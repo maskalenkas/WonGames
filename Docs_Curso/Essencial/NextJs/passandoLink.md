@@ -1,5 +1,5 @@
 ## 1
-**Atraves de um componente que não é um <a>**
+**Atraves de um componente que não é um <a> e não possui as**
 <S.LogoWrapper>
 <Link href="/" passHref>
   <a>
@@ -19,7 +19,7 @@
 
 
 ## 3 
-**Atraves de um componente que trata esse passHref**
+**Atraves de um componente que possui A (ou o wrapper é um A)**
  <Link href="/sign-in" passHref>
   <Button as="a">Sign in</Button>
 </Link>
