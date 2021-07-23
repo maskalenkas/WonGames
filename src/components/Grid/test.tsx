@@ -1,13 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { renderWithTheme } from 'utils/tests/helpers';
 
-import Grid from '.';
+import { Grid } from '.';
 
 describe('<Grid />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<Grid />)
+  it('should render correctly', () => {
+    const { container } = renderWithTheme(<Grid>Children</Grid>);
 
-    expect(screen.getByRole('heading', { name: /Grid/i })).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
+    expect(container).toMatchSnapshot();
   });
 });
