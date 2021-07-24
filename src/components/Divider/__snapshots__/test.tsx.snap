@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider /> should render correctly 1`] = `
+.c0 {
+  margin: 5.6rem auto 3.2rem;
+  height: 0.1rem;
+  background: rgba(181,181,181,0.3);
+  border: 0;
+}
+
+@media (min-width:768px) {
+  .c0 {
+    margin: calc(5.6rem * 2.5) auto 5.6rem;
+  }
+}
+
+<div>
+  <hr
+    class="c0"
+  />
+</div>
+`;
