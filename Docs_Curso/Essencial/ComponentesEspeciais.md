@@ -66,6 +66,10 @@
 # Exemplo de testes em que eu quero que o elemento não renderize
 *components/empty*
 
+# Teste de verificação para se lista foi apssada faça x e se não faça y
+*components/empty*
+
+
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
 **Story**
