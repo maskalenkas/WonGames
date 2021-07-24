@@ -34,4 +34,18 @@ describe('<Wishlist />', () => {
 
     expect(screen.getAllByText(/population zero/i)).toHaveLength(6);
   });
+
+  it('deve renderizar o componente Empty se não tiver games', () => {
+    renderWithTheme(
+      <Wishlist
+        recommendedHighlight={highlightMock}
+        recommendedGames={gamesMock}
+      />,
+    );
+
+    expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument();
+
+    // Esperando o componente empty
+    expect(screen.getByRole('heading', { name: /your wishlist is empty/i }));
+  });
 });
