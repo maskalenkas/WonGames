@@ -1,11 +1,11 @@
 ## 1
-**Atraves de um componente que não é um <a> e não possui as**
+**Atraves de um componente que não é um <a>**
 <S.LogoWrapper>
 <Link href="/" passHref>
   <a>
-    <Logo hideOnMobile />
+    <Logo/>
   </a>
-  </Link>
+</Link>
 </S.LogoWrapper>
 
 
@@ -19,7 +19,7 @@
 
 
 ## 3 
-**Atraves de um componente que possui A (ou o wrapper é um A)**
+**Atraves de um componente que possui um <a>**
  <Link href="/sign-in" passHref>
   <Button as="a">Sign in</Button>
 </Link>
@@ -36,3 +36,13 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     minimal={minimal}
     ref={ref}
   >
+
+
+## 4
+**Atraves de um texto qualquer**
+ 
+<Link href="/" passHref>
+  <a>
+    <p>aaaaaa</p>
+  </a>
+</Link>
