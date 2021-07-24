@@ -39,6 +39,9 @@
 # Exemplo de como escurecer o background
 *components/highlight*
 
+# Exemplo de auto-fill
+*components/wishlist* (esta utilizando o components/grid)
+
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
 **Testes**
