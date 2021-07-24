@@ -30,17 +30,20 @@
 
 **Estilos**
 
-# Exemplo de utilização do overlay
-*components/Auth*
-
 # Exemplo de criação de wrapper para icone
 *components/TextField*
 
-# Exemplo de como escurecer o background
-*components/highlight*
+# Exemplo de como escurecer o background (overlay)
+*components/highlight* *templates/Auth*
 
-# Exemplo de auto-fill
+# Exemplo de auto-fill (auto preenchimento)
 *components/wishlist* (esta utilizando o components/grid)
+
+# Exemplo de trabalhar com imagem 
+*components/empty*
+
+# Exemplo de trabalhar com background
+*components/highlihht* | *templates/Auth*
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
