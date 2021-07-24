@@ -39,7 +39,7 @@
 # Exemplo de auto-fill (auto preenchimento)
 *components/wishlist* (esta utilizando o components/grid)
 
-# Exemplo de trabalhar com imagem 
+# Exemplo de trabalhar com imagem (svg)
 *components/empty*
 
 # Exemplo de trabalhar com background
@@ -59,6 +59,12 @@
 # Exemplo de teste com mediaquery
 *template/game/test*
 *test/TextContent*
+
+# Exemplo de testes com link
+*components/empty*
+
+# Exemplo de testes em que eu quero que o elemento não renderize
+*components/empty*
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
