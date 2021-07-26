@@ -5,6 +5,9 @@
 # Exemplo de componente controlado
 *Checkbox*
 
+# Exemplo de um link bem acessivel
+*components/GameItem*
+
 # Exemplo de utilização de HTMLAtributtes
 *components/Checkbox*
 
@@ -39,8 +42,8 @@
 # Exemplo de auto-fill (auto preenchimento)
 *components/wishlist* (esta utilizando o components/grid)
 
-# Exemplo de trabalhar com imagem (svg)
-*components/empty*
+# Exemplo de trabalhar com imagem (svg e img)
+*components/empty*(esta utilizando svg) *components/GameItem* (gameItem modifica o tamanho da imagem, e não e svg)
 
 # Exemplo de trabalhar com background
 *components/highlihht* | *templates/Auth*
@@ -69,6 +72,8 @@
 # Teste de verificação para se lista foi apssada faça x e se não faça y
 *components/empty*
 
+# Exemplo de testes com imagem
+*components/gameitem*
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
