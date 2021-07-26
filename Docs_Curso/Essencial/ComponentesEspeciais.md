@@ -29,6 +29,9 @@
 # Exemplo de 'as'
 *components/Button*
 
+# Exemplo de como utilizar Radio
+*compónents/PaymentOptions*
+
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
 **Estilos**
@@ -47,6 +50,9 @@
 
 # Exemplo de trabalhar com background
 *components/highlihht* | *templates/Auth*
+
+# Exemplo de como utilizar last-children e etc...
+*components/PaymentOptions/style*
 
 ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- ## -- 
 
