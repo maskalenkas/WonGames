@@ -62,7 +62,7 @@
 *components/Button*
 
 # Exemplo de função mokada
-*test/TextField*
+*components/TextField* | *components/paymentOptions*
 
 # Exemplo de componente mokado
 *template/Home/test*
@@ -70,7 +70,7 @@
 
 # Exemplo de teste com mediaquery
 *template/game/test*
-*test/TextContent*
+*components/TextContent*
 
 # Exemplo de testes com link
 *components/empty*
