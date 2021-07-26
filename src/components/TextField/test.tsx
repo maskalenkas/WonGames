@@ -58,6 +58,7 @@ describe('<TextField />', () => {
     userEvent.type(input, text);
 
     // Testando a chamada nesse input
+    // Se usa waitFor por conta que esta esperando os estados mudarem, e esta verificando chamada de função
     await waitFor(() => {
       expect(input).toHaveValue(text);
       expect(onInput).toHaveBeenCalledTimes(text.length);
@@ -118,6 +119,7 @@ describe('<TextField />', () => {
     userEvent.type(input, text);
 
     // Vai verificar se fica indigitavel caso esteja desativado
+    // Se usa waitFor por conta que esta esperando os estados mudarem, e esta verificando chamada de função
     await waitFor(() => {
       expect(input).not.toHaveValue(text);
     });
