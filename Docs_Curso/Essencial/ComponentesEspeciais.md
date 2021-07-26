@@ -58,8 +58,11 @@
 
 **Testes**
 
+# Exemplo de como testar disabled e etc...
+*components/Button*
+
 # Exemplo de função mokada
-*test/TextContent*
+*test/TextField*
 
 # Exemplo de componente mokado
 *template/Home/test*
